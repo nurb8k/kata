@@ -1,39 +1,6 @@
 public class Main {
-    public static void calc(String input) {
-//        IntegerNumbers integerNumbers = new IntegerNumbers();
-//        RimNumbers rimNumbers = new RimNumbers();
-//        char[] arr = input.toCharArray();
-//        boolean fistNum = false;
-//        boolean secNum = false;
-//        boolean firstRimNum = false;
-//        boolean secRimNum = false;
-//        for (int i = 0; i < arr.length; i++) {
-//            if(arr[i]==' '){
-//                break;
-//            }else if(arr[i]!=' '){
-//                if(arr[i] > '0' && arr[i] >= '9' ){
-//                    fistNum= true;
-//                }else{
-//                    fistNum= false;
-//                    break;
-//                }
-//            }
-//        }
-//        for (int j = arr.length-1;j > 0; j--) {
-//            if(arr[j]==' '){
-//                break;
-//            }else if{
-//                if(arr[j] > '0' && arr[j] >= '9' ){
-//                    secNum= true;
-//                }else{
-//                    secNum= false;
-//                    break;
-//                }
-//            }
-//        }
-//        if(fistNum && secNum){
-//            integerNumbers.calcIntegerNumber(input);
-//        }
+    public static String calc(String input) {
+
         IntegerNumbers integerNumbers = new IntegerNumbers();
         RimNumbers rimNumbers = new RimNumbers();
         char[] check = new char[input.length()];
@@ -78,23 +45,17 @@ public class Main {
         }
 
         if (itsInt  && count == 1 ) {
-            System.out.println(integerNumbers.calcIntegerNumber(input));
+            return integerNumbers.calcIntegerNumber(input);
         } else if (itsRim  && count == 1) {
-            System.out.println(rimNumbers.calculateRimNumbers(input));
+             return rimNumbers.calculateRimNumbers(input);
         }else{
             System.out.println("Error");
         }
 
-
+        return "Error";
     }
 
-    public static void main(String[] args) {
-        String str = "I + II";
 
-
-        calc(str);
-
-    }
 
 
 }
