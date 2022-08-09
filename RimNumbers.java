@@ -1,3 +1,5 @@
+import Exceptions.invalidInputException;
+
 public class RimNumbers {
     public String calculateRimNumbers(String input){
         char[] arr = input.toCharArray();
@@ -15,6 +17,9 @@ public class RimNumbers {
                     if( j == arr.length-1){
                         int b = romanToInteger.romanToDecimal(temp2);
                         String res = "";
+                        if(a<b && operation == '-' || operation == '/'){
+                            throw new invalidInputException("invalid input , please enter number like n1 > n2 ");
+                        }
                         if(operation == '+'){
                             res = IntegerToRoman.intToRoman(a+b);
                             return res;

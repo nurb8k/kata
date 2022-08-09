@@ -1,3 +1,5 @@
+import Exceptions.invalidInputException;
+
 public class IntegerNumbers {
     public String calcIntegerNumber(String str){
         char[] arr = str.toCharArray();
@@ -18,7 +20,9 @@ public class IntegerNumbers {
             }
             int a = Integer.parseInt(temp);
             int b = Integer.parseInt(temp2);
-
+            if(a > 10 || b > 10){
+                throw new invalidInputException("Invalid input, please enter only numbers under 10 (including 10)");
+            }
             if (operation == '+') {
                 temp = String.valueOf(a+b);
                 return temp;
