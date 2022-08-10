@@ -1,3 +1,5 @@
+import Exceptions.invalidInputException;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -32,7 +34,7 @@ public class Main {
 
 
         for (int i = 0; i < arr.length; i++) {
-            if (check[i] > '0' && check[i] <= '9') {
+            if (check[i] >= '0' && check[i] <= '9') {
                 itsInt = true;
             } else {
                 itsInt = false;
@@ -53,10 +55,9 @@ public class Main {
         } else if (itsRim  && count == 1) {
              return rimNumbers.calculateRimNumbers(input);
         }else{
-            System.out.println("Error");
+            throw new invalidInputException("Invalid BB input, please enter only numbers under 10 (including 10)");
         }
 
-        return "Error";
     }
 
     public static void main(String[] args) {

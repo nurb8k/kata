@@ -17,7 +17,7 @@ public class RimNumbers {
                     if( j == arr.length-1){
                         int b = romanToInteger.romanToDecimal(temp2);
                         String res = "";
-                        if(a<b && operation == '-' || operation == '/'){
+                        if(a<b && a > 10 || b > 10 && operation == '-' || operation == '/'){
                             throw new invalidInputException("invalid input , please enter number like n1 > n2 ");
                         }
                         if(operation == '+'){
