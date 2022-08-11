@@ -1,3 +1,5 @@
+import Exceptions.InvalidInputException;
+
 import java.util.*;
 
 public class RomanToInteger {
@@ -10,10 +12,14 @@ public class RomanToInteger {
             return 5;
         if (r == 'X')
             return 10;
+//        else{
+//           throw new InvalidInputException("Invalid input, please enter only numbers under 10 (including 10)");
+//        }
         return -1;
     }
 
     int romanToDecimal(String str)
+            // Roman to Int
     {
         int res = 0;
         for (int i = 0; i < str.length(); i++) {
